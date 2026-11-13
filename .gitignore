@@ -5,12 +5,53 @@ dist
 coverage
 
 .env
+.env.production
 .env.local
 .env.*.local
 tokens.json
+**/tokens*.json
+**/credentials*.json
+**/secrets*.json
+*.pem
+*.key
 
 start.cmd
 
 # Local capture output (may contain real account balances)
 capture-*.txt
 
+# Financial source files and exports — keep on disk, never commit
+*.pdf
+*.csv
+*.xlsx
+*.xls
+*.xlsm
+*.zip
+
+# Generated bookkeeping reports / pilot outputs with real data
+reports/**/*.csv
+reports/**/*.xlsx
+reports/**/*-with-data.*
+!reports/.gitkeep
+
+# Workbook backups (may contain financial data)
+*.BACKUP-*.xlsx
+*BACKUP*.xlsx
+
+# Local gateway staging / audit (may contain financial staging data; never secrets)
+data/local/
+reports/sandbox-readonly-verify.json
+reports/sandbox-fuel-pilot-discovery.json
+reports/audit/**
+
+# Allow committed templates / sample fixtures (no real financial data)
+!data/templates/**
+!data/samples/**
+!**/fixtures/**/*.csv
+!tests/fixtures/**
+
+# Local DDT gateway working state (control record, fingerprints, audit, copies)
+data/ddt/**
+!data/ddt/.gitkeep
+data/local/**
+!data/local/.gitkeep

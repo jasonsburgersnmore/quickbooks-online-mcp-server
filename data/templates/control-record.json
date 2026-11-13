@@ -1,0 +1,17 @@
+{
+  "title": "DDT Finance human-readable control record",
+  "updatedAt": "1970-01-01T00:00:00.000Z",
+  "environmentNote": "Template counts start at zero. The local Intuit QuickBooks MCP is the accounting API source; sandbox credentials are not live-company access, and production use requires separate Intuit OAuth authorization.",
+  "qboPurchaseLines": 0,
+  "importedStatementRows": 0,
+  "unmatchedOrPossibleRows": 0,
+  "fullyMatchedRows": 0,
+  "fingerprintFirst": true,
+  "matchBeforeClassify": true,
+  "notes": [
+    "Fingerprint duplicate files before ingesting anything else.",
+    "Match payments, transfers, refunds, and duplicate imports before proposing expense categories.",
+    "Do not implement or call apply_approved_batch yet.",
+    "Do not add a paid SQL adapter or bypass the DDT approval gate; use the direct Intuit MCP connection."
+  ]
+}
